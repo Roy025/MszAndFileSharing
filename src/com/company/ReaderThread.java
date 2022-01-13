@@ -21,14 +21,14 @@ public class ReaderThread implements Runnable {
                 try {
                     String received = ois.readUTF();
                     if (received.toLowerCase().contains("pass")) {
-                        File file = new File("D:\\PRAPTI\\JavaApp\\Intellij\\imajhr.jpg");
-                        FileOutputStream fis = new FileOutputStream(file);
+                        File file = new File("D:\\PRAPTI\\JavaApp\\Intellij\\Text1.txt");
+                        FileOutputStream fos = new FileOutputStream(file);
                         int file_l = ois.readInt();
                         byte b[] = new byte[file_l];
                         ois.readFully(b, 0, file_l);
-                        fis.write(b, 0, file_l);
+                        fos.write(b, 0, file_l);
                         System.out.println("File Sent");
-                        fis.close();
+                        fos.close();
                     }
                     System.out.println(Name + received);
                 } catch (IOException e) {

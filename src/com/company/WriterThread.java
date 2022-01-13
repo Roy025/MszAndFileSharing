@@ -35,6 +35,7 @@ public class WriterThread implements Runnable {
                         fis.read(b, 0, file_l);
                         oos.writeInt(file_l);
                         oos.write(b, 0, file_l);
+                        fis.close();
                     }
                     oos.writeUTF(message);
                     System.out.println("Message Sent");
