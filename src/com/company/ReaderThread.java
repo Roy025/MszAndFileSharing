@@ -21,7 +21,7 @@ public class ReaderThread implements Runnable {
                 try {
                     String received = ois.readUTF();
                     if (received.toLowerCase().contains("pass")) {
-                        File file = new File("D:\\PRAPTI\\JavaApp\\Intellij\\images7fjjhr.jpg");
+                        File file = new File("D:\\PRAPTI\\JavaApp\\Intellij\\imajhr.jpg");
                         FileOutputStream fis = new FileOutputStream(file);
                         int file_l = ois.readInt();
                         byte b[] = new byte[file_l];

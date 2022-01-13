@@ -25,8 +25,11 @@ public class WriterThread implements Runnable {
                 try {
                     String message = br.readLine();
                     if (message.toLowerCase().contains("pass")) {
-                        File file = new File("D:\\PRAPTI\\JavaApp\\Intellij\\images1.jpg");
-                        FileInputStream fis = new FileInputStream(file);
+                        System.out.println("Positon - ");
+                        String path = br.readLine();
+                        File file = new File(path);
+                        oos.writeUTF("Pass " + file.getName());
+                        FileInputStream fis = new FileInputStream(file.getPath());
                         int file_l = (int) file.length();
                         byte b[] = new byte[file_l];
                         fis.read(b, 0, file_l);
