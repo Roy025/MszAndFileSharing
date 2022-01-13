@@ -8,11 +8,8 @@ public class Client {
         System.out.println("Client started..");
         Socket socket = new Socket("127.0.0.1", 22223);
         System.out.println("Client Connected..");
-
-
-
-        new WriterThread(socket, "Client ");
-        new ReaderThread(socket, "Client ");
+        new WriterThread(socket, "Client : ");
+        new ReaderThread(socket, "Client : ");
 
     }
 }

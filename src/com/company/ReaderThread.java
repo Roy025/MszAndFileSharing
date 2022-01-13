@@ -16,23 +16,21 @@ public class ReaderThread implements Runnable {
     @Override
     public void run() {
         try {
-            DataOutputStream oos = new DataOutputStream(socket.getOutputStream());
             DataInputStream ois = new DataInputStream(socket.getInputStream());
-
             while (true) {
                 try {
                     String received = ois.readUTF();
                     if (received.toLowerCase().contains("pass")) {
-                        File file = new File("D:\\PRAPTI\\JavaApp\\Intellij\\images2.jpg");
+                        File file = new File("D:\\PRAPTI\\JavaApp\\Intellij\\images7.jpg");
                         FileOutputStream fis = new FileOutputStream(file);
                         int file_l = ois.readInt();
                         byte b[] = new byte[file_l];
                         ois.readFully(b, 0, file_l);
                         fis.write(b, 0, file_l);
-                        fis.close();
                         System.out.println("File Sent");
+                        fis.close();
                     }
-                    System.out.println(Name + "Got: " + received);
+                    System.out.println(Name + received);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
